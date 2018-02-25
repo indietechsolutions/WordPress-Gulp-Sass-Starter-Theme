@@ -7,7 +7,7 @@ var gulp = require('gulp'),
 // Styles
 gulp.task('styles', function() {
   return gulp.src('assets/styles/*.scss')
-	.pipe(plugins.rubySass({ style: 'expanded', sourcemap: true }))
+	return sass('assets/styles/*.scss', { style: 'expanded' },  sourcemap: true )
 	.pipe(plugins.autoprefixer('last 2 versions', 'ie 9', 'ios 6', 'android 4'))
 	.pipe(gulp.dest('assets/styles/build'))
 	.pipe(plugins.minifyCss({ keepSpecialComments: 1 }))
